@@ -1,1 +1,1 @@
-# Compressive sensing in python
+# Compressive sensing, python
