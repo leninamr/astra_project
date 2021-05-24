@@ -34,11 +34,13 @@ fig, axs = plt.subplots(3, 3, figsize=(12, 7), constrained_layout=True)
 # рандомное распределение бернулли
 A = [0, 1]
 A = np.random.choice(A, size=(K, N), p=[0.6, 0.4])
+# ортоганализируем строки для линейнонезависимости уравнений
 A = scp.orth(A.transpose()).transpose()
 
 y = np.dot(A, x)
 x0 = (A.transpose()).dot(y)
 xp = processing(A, y)
+# погрешность
 er_b = abs(x-xp).sum()
 #картиночки
 axs[0,0].set_title('Исходный сигнал\n')
