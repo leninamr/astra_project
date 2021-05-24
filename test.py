@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 
 from processing import processing
 
+# N - размер сигнала
+# K - размер сжатого сообщения
 N = 256
 K = 60
 
@@ -29,7 +31,7 @@ x = np.random.choice(x, size=(N, 1), p=[0.96, 0.02, 0.02])
 # A =  np.random.randint(2, size = (10, 10))
 
 fig, axs = plt.subplots(3, 3, figsize=(12, 7), constrained_layout=True)
-# рандомное распределение бернулли (не очень хорошо работает)
+# рандомное распределение бернулли
 A = [0, 1]
 A = np.random.choice(A, size=(K, N), p=[0.6, 0.4])
 A = scp.orth(A.transpose()).transpose()
