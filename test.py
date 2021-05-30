@@ -17,8 +17,20 @@ N = 256
 K = 60
 
 # вектор(сигнал) - много нулей
-x = [0, 1, -1]
-x = np.random.choice(x, size=(N, 1), p=[0.96, 0.02, 0.02])
+#x = [0, 1, -1]
+#x = np.random.choice(x, size=(N, 1), p=[0.96, 0.02, 0.02])
+
+# число всплесков в сигнале
+n = 20
+
+x = np.zeros((N,1))
+r = 5*np.random.rand(n,1)
+k = np.random.randint(1,100,n)
+a = 1
+for j in range(n):
+    i = a*j + 1
+    x[i*k[j]] = r[j]
+    a = j-j
 
 #x = np.zeros((N, 1))
 
